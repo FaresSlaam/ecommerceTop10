@@ -1,10 +1,10 @@
 <!-- Electro: ASP.NET Core MVC E-commerce Project 🛍️💻 -->
 
-# E-Commerce: ASP.NET Core MVC E-commerceTop10 Project
+# E-Commerce: ASP.NET Core MVC E-commerce Project
 
 ## Introduction
 
-Welcome to E-CommerceTop10, a sleek and powerful e-commerce project built using ASP.NET Core MVC! This project took an entire year of dedicated effort and hard work to complete.
+Welcome to E-Commerce, a sleek and powerful e-commerce project built using ASP.NET Core MVC! This project took an entire year of dedicated effort and hard work to complete.
 
 
 ## Project Overview
