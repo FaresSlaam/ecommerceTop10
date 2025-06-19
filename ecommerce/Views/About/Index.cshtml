@@ -1,0 +1,157 @@
+﻿@{
+    ViewData["Title"] = "About Page";
+
+    var teamMembers = new[]
+    {
+        new { Name = "Fares Ahmed", Role = "Project Manager", Image = "468175247_2921671458001689_1780720760454636417_n.jpg" },
+        new { Name = "Amira Mohamed", Role = "Back-End Developer", Image = "member2.jpg" },
+        new { Name = "Omnia Ibrahim", Role = "Back-End Developer", Image = "Screenshot 2025-04-29 105613.png" },
+        new { Name = "Amal Abdel Fattah", Role = "Back-End Developer", Image = "member4.jpg" },
+        new { Name = "Hoda Osman", Role = "Back-End Developer", Image = "member5.jpg" },
+        new { Name = "Dina Sobhi", Role = "Front-End Developer", Image = "member6.jpg" },
+        new { Name = "Mohy Bakar", Role = "Front-End Developer", Image = "member7.jpg" },
+        new { Name = "Hussain Mohamed", Role = "Front-End Developer", Image = "Screenshot 2025-04-29 105945.png" },
+        new { Name = "Amira Salah", Role = "Front-End Developer", Image = "member10.jpg" },
+                new { Name = "Hasnaa", Role = "Front-End Developer", Image = "member10.jpg" }
+
+    };
+}
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+<style>
+    .team-section {
+        padding: 50px 0;
+    }
+
+        .team-section h2 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .team-section p {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 40px;
+        }
+
+    .team-item {
+        margin-bottom: 30px;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+        .team-item:hover {
+            transform: scale(1.03);
+        }
+
+        .team-item .thumb img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .team-item:hover .thumb img {
+            transform: scale(1.05);
+        }
+
+    .down-content h4 {
+        margin-top: 15px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .down-content span {
+        color: #888;
+        font-size: 15px;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .hover-effect {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+
+        .hover-effect .inner-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hover-effect:hover .inner-content {
+            opacity: 1;
+        }
+
+        .hover-effect ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+            .hover-effect ul li a {
+                color: #fff;
+                font-size: 18px;
+                transition: color 0.3s;
+            }
+
+                .hover-effect ul li a:hover {
+                    color: #ffd700;
+                }
+</style>
+
+<section class="team-section">
+    <div class="container">
+        <div class="text-center">
+            <h2>Meet Our Team</h2>
+            <p>A passionate group of professionals who built the E-Commerce Top10 platform.</p>
+        </div>
+
+        <div class="row mt-5">
+            @foreach (var member in teamMembers)
+            {
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-item">
+                        <div class="thumb hover-effect">
+                            <img src="~/images/@member.Image" alt="@member.Name" class="img-fluid" />
+                            <div class="inner-content">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="down-content">
+                            <h4>@member.Name</h4>
+                            <span>@member.Role</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
